@@ -1,3 +1,4 @@
 <resources>
-    <string name="app_name">Projekt</string>
+    <string name="app_name">no sense app</string>
+    <string name="home_activity">Home Activity</string>
 </resources>
