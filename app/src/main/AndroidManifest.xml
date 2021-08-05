@@ -10,10 +10,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Projekt">
         <activity
-            android:name=".HomeActivity"
+            android:name=".HomeLogged"
+            android:exported="true" />
+        <activity
+            android:name=".LoginActivity"
             android:exported="true"
-            android:label="Home">
-        </activity>
+            android:label="Login!"/>
+        <activity
+            android:name=".SignupActivity"
+            android:exported="true"
+            android:label="Register!" />
         <activity
             android:name=".MainActivity"
             android:exported="true">

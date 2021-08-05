@@ -2,4 +2,8 @@
     <string name="app_name">no sense app</string>
     <string name="home_activity">Home Activity</string>
     <string name="no_sense_app">no sense app</string>
+
+    <string name="username">com.example.projekt.username</string>
+    <string name="password">com.example.projekt.password</string>
+    <string name="checkbox">com.example.projekt.checkbox</string>
 </resources>

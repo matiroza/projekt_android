@@ -10,6 +10,7 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
@@ -17,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
     //hooks
     View first, second, third, fourth, fifth;
     TextView created, appName;
+    ImageView appLgoo;
 
     //Animacje
     Animation topAnimation, bottomAnimation, middleAnimation;
@@ -43,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
 
         created = findViewById(R.id.created);
         appName = findViewById(R.id.appName);
+        appLgoo = findViewById(R.id.appLogo);
 
 
         //animacje
@@ -55,16 +58,17 @@ public class MainActivity extends AppCompatActivity {
         created.setAnimation(bottomAnimation);
 
         appName.setAnimation(middleAnimation);
+        appLgoo.setAnimation(middleAnimation);
 
 
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent intent = new Intent(MainActivity.this, HomeActivity.class);
+                Intent intent = new Intent(MainActivity.this, LoginActivity.class);
                 startActivity(intent);
                 finish();
             }
-        }, 4000);
+        }, 2000);
 
     }
 }
