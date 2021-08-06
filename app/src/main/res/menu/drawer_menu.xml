@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_message"
+            android:icon="@drawable/ic_message"
+            android:title="Message" />
+        <item
+            android:id="@+id/nav_phone"
+            android:icon="@drawable/ic_phone"
+            android:title="Phone" />
+        <item
+            android:id="@+id/nav_brightness"
+            android:icon="@drawable/ic_brightness2"
+            android:title="Brightness" />
+        <item
+            android:id="@+id/nav_image"
+            android:icon="@drawable/ic_image"
+            android:title="Image" />
+        <item
+            android:id="@+id/nav_map"
+            android:icon="@drawable/ic_map"
+            android:title="Map" />
+    </group>
+
+    <item android:title="Communicate">
+        <menu>
+            <item
+                android:id="@+id/nav_share"
+                android:icon="@drawable/ic_logo"
+                android:title="logo" />
+            <item
+                android:id="@+id/nav_send"
+                android:icon="@drawable/ic_logo"
+                android:title="logo" />
+        </menu>
+    </item>
+
+</menu>

@@ -6,4 +6,8 @@
     <string name="username">com.example.projekt.username</string>
     <string name="password">com.example.projekt.password</string>
     <string name="checkbox">com.example.projekt.checkbox</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
 </resources>
