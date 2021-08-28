@@ -17,16 +17,17 @@
             android:icon="@drawable/ic_brightness2"
             android:title="Brightness" />
         <item
-            android:id="@+id/nav_image"
-            android:icon="@drawable/ic_image"
-            android:title="Image" />
-        <item
             android:id="@+id/nav_map"
             android:icon="@drawable/ic_map"
             android:title="Map" />
+        <item
+            android:id="@+id/nav_temperature"
+            android:icon="@drawable/ic_thermostat"
+            android:title="Temperature" />
+
     </group>
 
-    <item android:title="Communicate">
+    <!--<item android:title="Communicate">
         <menu>
             <item
                 android:id="@+id/nav_share"
@@ -37,6 +38,6 @@
                 android:icon="@drawable/ic_logo"
                 android:title="logo" />
         </menu>
-    </item>
+    </item>-->
 
 </menu>

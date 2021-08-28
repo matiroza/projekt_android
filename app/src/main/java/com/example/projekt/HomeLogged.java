@@ -7,6 +7,7 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import android.hardware.SensorManager;
 import android.os.Bundle;
 import android.view.MenuItem;
 
@@ -34,14 +35,6 @@ public class HomeLogged extends AppCompatActivity implements NavigationView.OnNa
         drawerLayout.addDrawerListener(toggle);
         toggle.syncState();
 
-        /*if(savedInstanceState == null) {
-            getSupportFragmentManager().beginTransaction().replace(
-                    R.id.fragment_container,
-                    new MessageFragment()).commit();
-
-            navigationView.setCheckedItem(R.id.nav_message);
-        }*/
-
     }
 
     @Override
@@ -63,10 +56,19 @@ public class HomeLogged extends AppCompatActivity implements NavigationView.OnNa
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()){
             case R.id.nav_message:
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new MessageFragment()).commit();
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new MessageFragment()).addToBackStack(null).commit();
                 break;
             case R.id.nav_phone:
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new MessageFragment()).commit();
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new PhoneFragment()).addToBackStack(null).commit();
+                break;
+            case R.id.nav_brightness:
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new BrightnessFragment()).addToBackStack(null).commit();
+                break;
+            case R.id.nav_temperature:
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new TemperatureFragment()).addToBackStack(null).commit();
+                break;
+            case R.id.nav_map:
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new MapFragment()).addToBackStack(null).commit();
                 break;
         }
 

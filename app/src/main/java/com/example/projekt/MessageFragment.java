@@ -1,39 +1,76 @@
 package com.example.projekt;
 
+import android.Manifest;
+import android.app.AppComponentFactory;
+import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.telephony.SmsManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.LifecycleObserver;
 
-public class MessageFragment extends Fragment {
+public class MessageFragment extends Fragment  {
 
-    /**
-     * Called to have the fragment instantiate its user interface view.
-     * This is optional, and non-graphical fragments can return null. This will be called between
-     * {@link #onCreate(Bundle)} and {@link #onViewCreated(View, Bundle)}.
-     *
-     * <p>It is recommended to <strong>only</strong> inflate the layout in this method and move
-     * logic that operates on the returned View to {@link #onViewCreated(View, Bundle)}.
-     *
-     * <p>If you return a View from here, you will later be called in
-     * {@link #onDestroyView} when the view is being released.
-     *
-     * @param inflater           The LayoutInflater object that can be used to inflate
-     *                           any views in the fragment,
-     * @param container          If non-null, this is the parent view that the fragment's
-     *                           UI should be attached to.  The fragment should not add the view itself,
-     *                           but this can be used to generate the LayoutParams of the view.
-     * @param savedInstanceState If non-null, this fragment is being re-constructed
-     *                           from a previous saved state as given here.
-     * @return Return the View for the fragment's UI, or null.
-     */
+    private final static int REQUEST_SMS = 1;
+    private EditText editTextNumber, editTextMessage;
+    private Button buttonSend;
+
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_message, container, false);
+        View view = inflater.inflate(R.layout.fragment_message, container, false);
+        editTextNumber = view.findViewById(R.id.inputNumber);
+        editTextMessage = view.findViewById(R.id.inputMessage);
+        buttonSend = view.findViewById(R.id.buttonSend);
+
+        buttonSend.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                makeSmsSend();
+            }
+        });
+
+        return view;
+    }
+
+    private void makeSmsSend(){
+        String number = editTextNumber.getText().toString();
+        String msg = editTextMessage.getText().toString();
+        if(number.trim().length() > 0 ){
+            if(ContextCompat.checkSelfPermission(getContext(), Manifest.permission.SEND_SMS) != PackageManager.PERMISSION_GRANTED){
+                ActivityCompat.requestPermissions(getActivity(), new String[] {Manifest.permission.SEND_SMS}, REQUEST_SMS);
+            } else {
+                SmsManager smsManager = SmsManager.getDefault();
+                smsManager.sendTextMessage(number,null,msg,null,null);
+                Toast.makeText(getContext(), "Message Send!", Toast.LENGTH_SHORT).show();
+            }
+        } else {
+            Toast.makeText(getContext(), "Enter Phone Number", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        if(requestCode == REQUEST_SMS){
+            if(grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED){
+                makeSmsSend();
+            } else {
+                Toast.makeText(getContext(), "Permission Denied", Toast.LENGTH_SHORT).show();
+            }
+        }
     }
 }

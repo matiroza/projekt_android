@@ -9,5 +9,8 @@
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="send">SEND</string>
+    <string name="message">message</string>
+    <string name="number">number</string>
 
 </resources>
