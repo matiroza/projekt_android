@@ -13,4 +13,28 @@
     <string name="message">message</string>
     <string name="number">number</string>
 
+    <string-array name="countries">
+        <item>USA</item>
+        <item>Canada</item>
+        <item>Poland</item>
+        <item>Germany</item>
+        <item>Argentina</item>
+        <item>Belgium</item>
+        <item>Bulgaria</item>
+        <item>Chile</item>
+        <item>China</item>
+        <item>Columbia</item>
+        <item>Denemark</item>
+        <item>Dominica</item>
+        <item>Greece</item>
+        <item>France</item>
+        <item>Finland</item>
+        <item>Portugal</item>
+        <item>Peru</item>
+        <item>Panama</item>
+        <item>Pakistan</item>
+        <item>Ukraine</item>
+        <item>UK</item>
+    </string-array>
+
 </resources>

@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -16,6 +18,7 @@ public class SignupActivity extends AppCompatActivity {
     //hooks
     EditText username, password, repassword;
     Button signin, signup;
+    AutoCompleteTextView autoCompleteTextView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,8 +31,14 @@ public class SignupActivity extends AppCompatActivity {
 
         signin = findViewById(R.id.btnSignIn);
         signup = findViewById(R.id.btnSignUp);
+        autoCompleteTextView = findViewById(R.id.autoCompleteText);
 
         db = new DBHelper(this);
+
+        String[] countries = getResources().getStringArray(R.array.countries);
+        ArrayAdapter arrayAdapter = new ArrayAdapter(getApplicationContext(), android.R.layout.simple_list_item_1, countries);
+        autoCompleteTextView.setAdapter(arrayAdapter);
+
 
         signup.setOnClickListener(new View.OnClickListener() {
             @Override

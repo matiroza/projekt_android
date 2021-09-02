@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#419CB8">
+
+
+    <TextView
+        android:layout_marginTop="16dp"
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="HOME"
+        android:textColor="@color/black"
+        android:textSize="100dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TableLayout
+        android:id="@+id/tableLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingTop="140dp"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/button_home_1"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:text="ViewList Useres" />
+
+            <Button
+                android:id="@+id/button_home_2"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_margin="16dp"
+                android:text="Button 2" />
+
+            <Button
+                android:id="@+id/button_home_3"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:text="Button 3" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/button_home_4"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:text="Button 4" />
+
+            <Button
+                android:id="@+id/button_home_5"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_margin="16dp"
+                android:text="Button 5" />
+
+            <Button
+                android:id="@+id/button_home_6"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:text="Button 6" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/button_home_7"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:text="Button 7 " />
+
+            <Button
+                android:id="@+id/button_home_8"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_margin="16dp"
+                android:text="Button 8" />
+
+            <Button
+                android:id="@+id/button_home_9"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:text="Button 9" />
+        </TableRow>
+
+    </TableLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

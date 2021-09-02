@@ -6,11 +6,11 @@
     android:background="#419CB8">
 
     <TextView
-        android:id="@+id/textViewTemperature"
+        android:id="@+id/editTextBarometer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textStyle="bold"
-        android:text=""
+        android:text="990.0 mbar"
         android:textSize="48dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

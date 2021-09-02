@@ -22,27 +22,70 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Password"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="20dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:layout_below="@id/username"/>
+
     <EditText
         android:id="@+id/repassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Retype Password"
-        android:layout_marginTop="50dp"
+        android:layout_below="@id/password"
         android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
         android:layout_marginRight="20dp"
-        android:layout_below="@id/password"/>
+        android:hint="Retype Password" />
+
+
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/repassword"
+        android:id="@+id/radioGroup"
+        android:layout_centerHorizontal="true"
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp">
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Male"
+            android:layout_margin="8dp"/>
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Famale"
+            android:layout_margin="8dp"/>
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Rather not say"
+            android:layout_margin="8dp"/>
+
+    </RadioGroup>
+
+
+    <AutoCompleteTextView
+        android:layout_marginTop="20dp"
+        android:id="@+id/autoCompleteText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:hint="Country..."
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/radioGroup"/>
+
     <Button
         android:id="@+id/btnSignUp"
         android:layout_centerHorizontal="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Sign Up"
-        android:layout_marginTop="50dp"
-        android:layout_below="@id/repassword"
+        android:layout_marginTop="30dp"
+        android:layout_below="@id/autoCompleteText"
         android:backgroundTint="#FF9800"
         android:textColor="@color/black"/>
     <Button
@@ -51,7 +94,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Sign In"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="30dp"
         android:layout_below="@id/btnSignUp"
         android:backgroundTint="#FF9800"
         android:textColor="@color/black"/>

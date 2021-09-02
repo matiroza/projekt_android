@@ -13,6 +13,7 @@ public class DBHelper extends SQLiteOpenHelper {
     public static final String name = "Login.db";
     public static final int version = 1;
     public static final String DBNAME = "Login.db";
+    public static final String TABLE_NAME = "users";
 
     /**
      * Create a helper object to create, open, and/or manage a database.
@@ -65,8 +66,8 @@ public class DBHelper extends SQLiteOpenHelper {
     public Boolean insertData(String username, String password){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
-        contentValues.put("username", username);
         contentValues.put("password", password);
+        contentValues.put("username", username);
         long result = db.insert("users", null, contentValues);
 
         return result != -1;
@@ -84,4 +85,9 @@ public class DBHelper extends SQLiteOpenHelper {
         return cursor.getCount() > 0;
     }
 
+    public Cursor getListContents() {
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor data = db.rawQuery("SELECT * FROM  users ", null);
+        return data;
+    }
 }

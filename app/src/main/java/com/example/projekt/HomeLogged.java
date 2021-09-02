@@ -7,9 +7,12 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import android.content.Intent;
 import android.hardware.SensorManager;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 
 import com.google.android.material.navigation.NavigationView;
 
@@ -21,6 +24,7 @@ public class HomeLogged extends AppCompatActivity implements NavigationView.OnNa
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_logged);
+
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -34,6 +38,11 @@ public class HomeLogged extends AppCompatActivity implements NavigationView.OnNa
 
         drawerLayout.addDrawerListener(toggle);
         toggle.syncState();
+
+        if(savedInstanceState == null) {
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new HomeFragment()).commit();
+            navigationView.setCheckedItem(R.id.nav_home);
+        }
 
     }
 
@@ -55,6 +64,9 @@ public class HomeLogged extends AppCompatActivity implements NavigationView.OnNa
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()){
+            case R.id.nav_home:
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new HomeFragment()).addToBackStack(null).commit();
+                break;
             case R.id.nav_message:
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new MessageFragment()).addToBackStack(null).commit();
                 break;
@@ -70,6 +82,10 @@ public class HomeLogged extends AppCompatActivity implements NavigationView.OnNa
             case R.id.nav_map:
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new MapFragment()).addToBackStack(null).commit();
                 break;
+            case R.id.nav_barometer:
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new BarometerFragment()).addToBackStack(null).commit();
+                break;
+
         }
 
         drawerLayout.closeDrawer(GravityCompat.START);
