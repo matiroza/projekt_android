@@ -5,27 +5,30 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    tools:context=".SignupActivity"
+    android:backgroundTint="#F8CF53"
     android:padding="10dp"
-    android:backgroundTint="#F8CF53">
+    tools:context=".SignupActivity"
+    android:id="@+id/main">
+
 
     <EditText
         android:id="@+id/username"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="User Name"
-        android:layout_marginTop="80dp"
         android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"/>
+        android:layout_marginTop="80dp"
+        android:layout_marginRight="20dp"
+        android:hint="User Name" />
+
     <EditText
         android:id="@+id/password"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Password"
-        android:layout_marginTop="20dp"
+        android:layout_below="@id/username"
         android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
         android:layout_marginRight="20dp"
-        android:layout_below="@id/username"/>
+        android:hint="Password" />
 
     <EditText
         android:id="@+id/repassword"
@@ -39,64 +42,84 @@
 
 
     <RadioGroup
+        android:id="@+id/radioGroup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/repassword"
-        android:id="@+id/radioGroup"
         android:layout_centerHorizontal="true"
-        android:orientation="horizontal"
-        android:layout_marginTop="20dp">
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal">
 
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Male"
-            android:layout_margin="8dp"/>
+            android:layout_margin="8dp"
+            android:text="Male" />
 
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Famale"
-            android:layout_margin="8dp"/>
+            android:layout_margin="8dp"
+            android:text="Famale" />
 
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Rather not say"
-            android:layout_margin="8dp"/>
+            android:layout_margin="8dp"
+            android:text="Rather not say" />
 
     </RadioGroup>
 
-
-    <AutoCompleteTextView
-        android:layout_marginTop="20dp"
-        android:id="@+id/autoCompleteText"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="40dp"
-        android:hint="Country..."
-        android:layout_centerHorizontal="true"
-        android:layout_below="@id/radioGroup"/>
+        android:id="@+id/middleBox"
+        android:layout_below="@id/radioGroup"
+        android:orientation="horizontal"
+        >
+
+        <AutoCompleteTextView
+            android:id="@+id/autoCompleteText"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:hint="Country..."
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="40dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="age: "/>
+
+        <Spinner
+            android:layout_width="66dp"
+            android:layout_height="match_parent"
+            android:id="@+id/spinner1"
+            android:layout_marginLeft="6dp"
+            />
+    </LinearLayout>
+
 
     <Button
         android:id="@+id/btnSignUp"
-        android:layout_centerHorizontal="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Sign Up"
+        android:layout_below="@id/middleBox"
+        android:layout_centerHorizontal="true"
         android:layout_marginTop="30dp"
-        android:layout_below="@id/autoCompleteText"
         android:backgroundTint="#FF9800"
-        android:textColor="@color/black"/>
+        android:text="Sign Up"
+        android:textColor="@color/black" />
+
     <Button
         android:id="@+id/btnSignIn"
-        android:layout_centerHorizontal="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Sign In"
-        android:layout_marginTop="30dp"
         android:layout_below="@id/btnSignUp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
         android:backgroundTint="#FF9800"
-        android:textColor="@color/black"/>
+        android:text="Sign In"
+        android:textColor="@color/black" />
 
 </RelativeLayout>

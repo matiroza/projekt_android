@@ -15,6 +15,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Projekt">
         <activity
+            android:name=".ViewScrollContents"
+            android:exported="true" />
+        <activity
             android:name=".ViewListContents"
             android:exported="true" />
         <activity

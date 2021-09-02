@@ -35,6 +35,14 @@ public class HomeFragment extends Fragment {
             }
         });
 
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getContext(), ViewScrollContents.class);
+                startActivity(intent);
+            }
+        });
+
         return view;
     }
 }

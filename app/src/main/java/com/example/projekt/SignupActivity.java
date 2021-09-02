@@ -5,13 +5,15 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
 
-public class SignupActivity extends AppCompatActivity {
+public class SignupActivity extends AppCompatActivity{
 
     DBHelper db;
 
@@ -19,6 +21,7 @@ public class SignupActivity extends AppCompatActivity {
     EditText username, password, repassword;
     Button signin, signup;
     AutoCompleteTextView autoCompleteTextView;
+    Spinner spinner1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,11 +36,18 @@ public class SignupActivity extends AppCompatActivity {
         signup = findViewById(R.id.btnSignUp);
         autoCompleteTextView = findViewById(R.id.autoCompleteText);
 
+        //spiner
+        spinner1 = findViewById(R.id.spinner1);
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,R.array.numbers, R.layout.spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner1.setAdapter(adapter);
+
         db = new DBHelper(this);
 
         String[] countries = getResources().getStringArray(R.array.countries);
         ArrayAdapter arrayAdapter = new ArrayAdapter(getApplicationContext(), android.R.layout.simple_list_item_1, countries);
         autoCompleteTextView.setAdapter(arrayAdapter);
+
 
 
         signup.setOnClickListener(new View.OnClickListener() {
@@ -79,4 +89,5 @@ public class SignupActivity extends AppCompatActivity {
             }
         });
     }
+
 }
