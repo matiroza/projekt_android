@@ -15,6 +15,8 @@
         <entry key="..\:/Users/Mateo/AndroidStudioProjects/Projekt/app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.3828125" />
         <entry key="..\:/Users/Mateo/AndroidStudioProjects/Projekt/app/src/main/res/drawable/ic_logo.xml" value="0.22135416666666666" />
         <entry key="..\:/Users/Mateo/AndroidStudioProjects/Projekt/app/src/main/res/drawable/ic_map.xml" value="0.22135416666666666" />
+        <entry key="..\:/Users/Mateo/AndroidStudioProjects/Projekt/app/src/main/res/layout/activity_alarm.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Mateo/AndroidStudioProjects/Projekt/app/src/main/res/layout/activity_alarm_notification.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Mateo/AndroidStudioProjects/Projekt/app/src/main/res/layout/activity_home.xml" value="0.25625" />
         <entry key="..\:/Users/Mateo/AndroidStudioProjects/Projekt/app/src/main/res/layout/activity_home_logged.xml" value="0.276268115942029" />
         <entry key="..\:/Users/Mateo/AndroidStudioProjects/Projekt/app/src/main/res/layout/activity_home_logged_second.xml" value="0.36666666666666664" />
@@ -26,6 +28,7 @@
         <entry key="..\:/Users/Mateo/AndroidStudioProjects/Projekt/app/src/main/res/layout/adapter_view_layout.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Mateo/AndroidStudioProjects/Projekt/app/src/main/res/layout/fragment_barometer.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Mateo/AndroidStudioProjects/Projekt/app/src/main/res/layout/fragment_brightness.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Mateo/AndroidStudioProjects/Projekt/app/src/main/res/layout/fragment_first.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Mateo/AndroidStudioProjects/Projekt/app/src/main/res/layout/fragment_home.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Mateo/AndroidStudioProjects/Projekt/app/src/main/res/layout/fragment_image.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Mateo/AndroidStudioProjects/Projekt/app/src/main/res/layout/fragment_map.xml" value="0.36666666666666664" />

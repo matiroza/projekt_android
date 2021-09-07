@@ -43,6 +43,14 @@ public class HomeFragment extends Fragment {
             }
         });
 
+        btn3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getContext(), AlarmActivity.class);
+                startActivity(intent);
+            }
+        });
+
         return view;
     }
 }
