@@ -89,14 +89,14 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="age: "/>
+            android:text="age: "
+            android:id="@+id/ageText"/>
 
         <Spinner
-            android:layout_width="66dp"
+            android:layout_width="100dp"
             android:layout_height="match_parent"
             android:id="@+id/spinner1"
-            android:layout_marginLeft="6dp"
-            />
+            android:layout_marginLeft="6dp"/>
     </LinearLayout>
 
 

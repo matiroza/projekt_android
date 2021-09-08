@@ -29,7 +29,7 @@ public class ViewListContents extends AppCompatActivity {
             Toast.makeText(this, "There are no contents in this list!",Toast.LENGTH_LONG).show();
         }else{
             while(data.moveToNext()){
-                User user = new User(data.getString(0), data.getString(1), data.getString(1));
+                User user = new User(data.getString(0), data.getString(1), data.getString(2),data.getString(3));
                 theList.add(user);
                 UserListAdapter listAdapter = new UserListAdapter(this, R.layout.adapter_view_layout,theList);
                 listView.setAdapter(listAdapter);

@@ -3,12 +3,15 @@ package com.example.projekt;
 public class User {
     private String name;
     private String password;
-    private String sex;
+    private String country;
+    private String age;
 
-    public User(String name, String password, String sex) {
+
+    public User(String name, String password, String country, String age) {
         this.name = name;
         this.password = password;
-        this.sex = sex;
+        this.country = country;
+        this.age = age;
     }
 
     public String getName() {
@@ -27,11 +30,19 @@ public class User {
         this.password = password;
     }
 
-    public String getSex() {
-        return sex;
+    public String getCountry() {
+        return country;
     }
 
-    public void setSex(String sex) {
-        this.sex = sex;
+    public void setCountry(String country) {
+        this.country = country;
+    }
+
+    public String getAge() {
+        return age;
+    }
+
+    public void setAge(String age) {
+        this.age = age;
     }
 }

@@ -4,34 +4,37 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#00BCD4"
-    android:padding="8dp">
+    android:background="#00BCD4">
 
     <EditText
         android:id="@+id/inputNumber"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="104dp"
+        android:hint="@string/number"
+        android:inputType="phone"
+        android:textSize="22sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:inputType="phone"
-        android:hint="@string/number"/>
+        android:textColor="@color/black"/>
 
     <EditText
         android:id="@+id/inputMessage"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:hint="@string/message"
+        android:inputType="textCapSentences|textMultiLine"
+        android:maxLength="500"
+        android:maxLines="6"
+        android:textSize="22sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/inputNumber"
         app:layout_constraintVertical_bias="0.136"
-        android:inputType="textCapSentences|textMultiLine"
-        android:hint="@string/message"
-        android:maxLength="500"
-        android:maxLines="6"/>
+        android:textColor="@color/black"/>
 
     <Button
         android:id="@+id/buttonSend"
@@ -43,6 +46,7 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/inputMessage"
-        app:layout_constraintVertical_bias="0.111" />
+        app:layout_constraintVertical_bias="0.111"
+        android:textColor="@color/black"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -13,7 +13,6 @@ public class DBHelper extends SQLiteOpenHelper {
     public static final String name = "Login.db";
     public static final int version = 1;
     public static final String DBNAME = "Login.db";
-    public static final String TABLE_NAME = "users";
 
     /**
      * Create a helper object to create, open, and/or manage a database.
@@ -35,7 +34,7 @@ public class DBHelper extends SQLiteOpenHelper {
      */
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("create Table users(username TEXT primary key, password TEXT)");
+        db.execSQL("create Table users (username TEXT primary key, password TEXT,country TEXT,age TEXT)");
     }
 
     /**
@@ -63,11 +62,13 @@ public class DBHelper extends SQLiteOpenHelper {
         db.execSQL("drop Table if exists users");
     }
 
-    public Boolean insertData(String username, String password){
+    public Boolean insertData(String username, String password, String country, String age){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put("password", password);
         contentValues.put("username", username);
+        contentValues.put("country", country);
+        contentValues.put("age", age);
         long result = db.insert("users", null, contentValues);
 
         return result != -1;

@@ -56,6 +56,8 @@ public class SignupActivity extends AppCompatActivity{
                 String user = username.getText().toString();
                 String pass = password.getText().toString();
                 String repass = repassword.getText().toString();
+                String country = autoCompleteTextView.getText().toString();
+                String age = spinner1.getSelectedItem().toString();
 
                 if (user.equals("") || pass.equals("") || repass.equals("")) {
                     Toast.makeText(SignupActivity.this, "Please enter all the fields!", Toast.LENGTH_SHORT).show();
@@ -63,7 +65,7 @@ public class SignupActivity extends AppCompatActivity{
                     if (pass.equals(repass)) {
                         Boolean checkuser = db.checkUsername(user);
                         if (checkuser == false) {
-                            Boolean insert = db.insertData(user, pass);
+                            Boolean insert = db.insertData(user, pass, country, age);
                             if (insert == true) {
                                 Toast.makeText(SignupActivity.this, "Registered successfully, now you can Sign in", Toast.LENGTH_SHORT).show();
                                 /*Intent intent = new Intent(getApplicationContext(), HomeLogged.class);

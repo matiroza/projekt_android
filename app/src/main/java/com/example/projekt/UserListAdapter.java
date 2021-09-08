@@ -37,20 +37,21 @@ public class UserListAdapter extends ArrayAdapter<User> {
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
         String name = getItem(position).getName();
         String password = getItem(position).getPassword();
-        String sex = getItem(position).getPassword();
+        String country = getItem(position).getCountry();
+        String age = getItem(position).getAge();
 
-        User user = new User(name, password, sex);
+        User user = new User(name, password, country, age);
 
         LayoutInflater inflater = LayoutInflater.from(mContext);
         convertView = inflater.inflate(mResource, parent, false);
 
         TextView tname = (TextView) convertView.findViewById(R.id.textView1);
-        TextView tpassword = (TextView) convertView.findViewById(R.id.textView2);
-        TextView tsex = (TextView) convertView.findViewById(R.id.textView3);
+        TextView tcountry = (TextView) convertView.findViewById(R.id.textView2);
+        TextView tage = (TextView) convertView.findViewById(R.id.textView3);
 
         tname.setText(name);
-        tpassword.setText(password);
-        tsex.setText(sex);
+        tcountry.setText("country: " + country);
+        tage.setText("age: " + age);
 
         return convertView;
     }
