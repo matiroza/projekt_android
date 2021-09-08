@@ -15,6 +15,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Projekt">
         <activity
+            android:name=".MusicActivity"
+            android:exported="true" />
+        <activity
+            android:name=".VideoMusicActivity"
+            android:exported="true" />
+        <activity
             android:name=".GridViewContents"
             android:exported="true" />
         <activity
