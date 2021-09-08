@@ -32,6 +32,8 @@ public class HomeFragment extends Fragment implements View.OnClickListener{
         btn3.setOnClickListener(this);
         btn4.setOnClickListener(this);
         btn5.setOnClickListener(this);
+        btn6.setOnClickListener(this);
+
 
         return view;
     }
@@ -65,6 +67,8 @@ public class HomeFragment extends Fragment implements View.OnClickListener{
                 startActivity(intent5);
                 break;
             case R.id.button_home_6:
+                Intent intent6 = new Intent(getContext(), MusicActivity.class);
+                startActivity(intent6);
                 break;
             case R.id.button_home_7:
                 break;
