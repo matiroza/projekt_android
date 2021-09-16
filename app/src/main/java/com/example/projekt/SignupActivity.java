@@ -64,9 +64,9 @@ public class SignupActivity extends AppCompatActivity{
                 } else {
                     if (pass.equals(repass)) {
                         Boolean checkuser = db.checkUsername(user);
-                        if (checkuser == false) {
+                        if (!checkuser) {
                             Boolean insert = db.insertData(user, pass, country, age);
-                            if (insert == true) {
+                            if (insert) {
                                 Toast.makeText(SignupActivity.this, "Registered successfully, now you can Sign in", Toast.LENGTH_SHORT).show();
                                 /*Intent intent = new Intent(getApplicationContext(), HomeLogged.class);
                                 startActivity(intent);*/
